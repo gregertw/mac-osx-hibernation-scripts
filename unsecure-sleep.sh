@@ -14,6 +14,8 @@ pmset -c sleep 15
 pmset -a standbydelay 1800
 # Don't do powernaps
 pmset -a powernap 0
+# Don't wake up on WIFI/network connections
+pmset -a tcpkeepalive 0
 # Don't wake on magic Ethernet packets
 pmset -a womp 0
 # Ignore any ttys/ssh connected

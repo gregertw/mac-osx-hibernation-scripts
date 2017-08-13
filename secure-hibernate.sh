@@ -1,4 +1,5 @@
 #!/bin/bash
+# Must be run as root!
 # SMC and NVRAM need to be reset.
 # NVRAM rest:
 # Shut down your Mac, then turn it on and immediately hold down these four keys together: 
@@ -15,29 +16,30 @@
 # 4. Release all keys. You don't really know if anything happened.
 # 5. Reconnect the power adapter.
 # 6. Press the power button again to turn on your Mac.
-sudo pmset restoredefaults
+# See https://support.apple.com/en-us/HT202124 for info on standby
+pmset restoredefaults
 # Throw away key when going into hibernation (standby)
 pmset -a destroyfvkeyonstandby 1
 # Go directly into hibernation (standby)
 pmset -a hibernatemode 25
 # Do not sleep to memory
 pmset -a standby 0
+# Go directly to hibernation (standby)
+pmset -a standbydelay 0
 # Sleep on battery after 2 min
 pmset -b sleep 2
 # Sleep on power after 15 min
 pmset -c sleep 15
-# Go directly to hibernation (standby)
-pmset -a standbydelay 0
 # Don't do powernaps
 pmset -a powernap 0
+# Don't wake up on WIFI/network connections
+pmset -a tcpkeepalive 0
 # Don't wake on magic Ethernet packets
 pmset -a womp 0
 # Ignore any ttys/ssh connected
 pmset -a ttyskeepawake 0
 # Do not wake up on AC connected
 pmset -a acwake 0
-# Turn off EU low-power sleep (only use complete hibernation)
+# Turn autopoweroff off (in seconds!)
 pmset -a autopoweroff 0
 pmset -a autopoweroffdelay 0
-# Don't hibernate when on AC
-pmset -c sleep 0
