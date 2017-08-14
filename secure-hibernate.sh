@@ -1,35 +1,21 @@
 #!/bin/bash
 # Must be run as root!
-# SMC and NVRAM need to be reset.
-# NVRAM rest:
-# Shut down your Mac, then turn it on and immediately hold down these four keys together: 
-# Option, Command, P, and R. Keep holding the keys for about 20 seconds, during which your Mac might appear to restart (the screen will flash).
-# When it starts up again, you will notice that the screen has max brightness 
-# (If you have a Mac that plays a startup sound when you turn it on, you can release the keys after the second startup sound.)
-#
-# SMC reset:
-# 1. Shut down your Mac.
-# 2. Unplug the MagSafe or USB-C power adapter from your computer.
-# 3. Using the built-in keyboard, press Shift-Control-Option on the left side of the keyboard, then press the power button at the same time. 
-#    Hold these keys and the power button for 10 seconds.
-#    If you have a 2016 MacBook Pro with Touch ID, the Touch ID button is also the power button.
-# 4. Release all keys. You don't really know if anything happened.
-# 5. Reconnect the power adapter.
-# 6. Press the power button again to turn on your Mac.
-# See https://support.apple.com/en-us/HT202124 for info on standby
 pmset restoredefaults
 # Throw away key when going into hibernation (standby)
 pmset -a destroyfvkeyonstandby 1
-# Go directly into hibernation (standby)
+# Go directly to hibernation
 pmset -a hibernatemode 25
-# Do not sleep to memory
+# Turn off standby (smart sleep)
 pmset -a standby 0
-# Go directly to hibernation (standby)
 pmset -a standbydelay 0
-# Sleep on battery after 2 min
-pmset -b sleep 2
-# Sleep on power after 15 min
-pmset -c sleep 15
+# Sleep (i.e. hibernate) on battery after 10 min
+pmset -b sleep 10
+# Sleep (i.e. hibernate) on power after 30 min
+pmset -c sleep 30
+# Disksleep after 5 min on battery
+pmset -b disksleep 5
+# Disksleep after 10 min on power
+pmset -c disksleep 10
 # Don't do powernaps
 pmset -a powernap 0
 # Don't wake up on WIFI/network connections
@@ -40,6 +26,6 @@ pmset -a womp 0
 pmset -a ttyskeepawake 0
 # Do not wake up on AC connected
 pmset -a acwake 0
-# Turn autopoweroff off (in seconds!)
+# Turn off EU low-power sleep = standby (in seconds!)
 pmset -a autopoweroff 0
 pmset -a autopoweroffdelay 0
