@@ -1,7 +1,7 @@
 # README #
 
 This repository keeps the scripts I use for my Macbook Pro to tweak sleep/hibernation. The scripts are described in
-a blog post on https://stuff.ttwedel.no
+this blog post http://stuff.ttwedel.no/2017/08/secure-mac-osx-sleep.html
 
 See https://support.apple.com/en-us/HT202124 for info on which Macs these settings apply to.
 
