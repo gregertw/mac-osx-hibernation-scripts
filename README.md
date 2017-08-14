@@ -1,47 +1,26 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This repository keeps the scripts I use for my Macbook Pro to tweak sleep/hibernation. The scripts are described in
+a blog post on https://stuff.ttwedel.no
 
-### What is this repository for? ###
+See https://support.apple.com/en-us/HT202124 for info on which Macs these settings apply to.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### SMC and NVRAM reset ###
 
-### How do I get set up? ###
+When you use these scripts, you need to reset your SMC and NVRAM settings:
 
-# SMC and NVRAM need to be reset.
-# NVRAM rest:
-# Shut down your Mac, then turn it on and immediately hold down these four keys together: 
-# Option, Command, P, and R. Keep holding the keys for about 20 seconds, during which your Mac might appear to restart (the screen will flash).
-# When it starts up again, you will notice that the screen has max brightness 
-# (If you have a Mac that plays a startup sound when you turn it on, you can release the keys after the second startup sound.)
-#
-# SMC reset:
-# 1. Shut down your Mac.
-# 2. Unplug the MagSafe or USB-C power adapter from your computer.
-# 3. Using the built-in keyboard, press Shift-Control-Option on the left side of the keyboard, then press the power button at the same time. 
-#    Hold these keys and the power button for 10 seconds.
-#    If you have a 2016 MacBook Pro with Touch ID, the Touch ID button is also the power button.
-# 4. Release all keys. You don't really know if anything happened.
-# 5. Reconnect the power adapter.
-# 6. Press the power button again to turn on your Mac.
-# See https://support.apple.com/en-us/HT202124 for info on standby
+* SMC reset first, then NVRAM.
+* Shut down your Mac.
+* Unplug the MagSafe or USB-C power adapter from your computer.
+* Using the built-in keyboard, press Shift-Control-Option on the left side of the keyboard, then press and 
+  hold the power button at the same time. Hold these keys and the power button for 10 seconds. You will not see or 
+  hear anything (if you have a 2016 MacBook Pro with Touch ID, the Touch ID button is also the power button).
+* Release all keys. You still don't really know if anything happened.
+* Press the power button again to turn on your Mac and immediately hold down these four keys together: 
+  Option, Command, P, and R. Keep holding the keys for * about 20 seconds, during which your Mac might appear to restart (the screen will flash).
+  When it starts up again, you will notice that the screen has max brightness (if you have a Mac that plays a startup sound when you turn it on, you can release the keys after the second startup sound).
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
 
 ### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+See the blog post.
