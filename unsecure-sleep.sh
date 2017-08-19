@@ -1,8 +1,8 @@
 #!/bin/bash
 sudo pmset restoredefaults
-# Throw away key when going into hibernation (standby)
+# Do not throw away key when going into hibernation (standby)
 pmset -a destroyfvkeyonstandby 0
-# Standard laptop sleep to memory first, then hibernate (standby)
+# Standard laptop sleep to memory first, then hibernate when battery is low
 pmset -a hibernatemode 3
 # Sleep to memory
 pmset -a standby 1
